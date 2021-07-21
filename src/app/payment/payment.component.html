@@ -1,8 +1,8 @@
 <div class="title">
-    Pagamento para <span>Nome usuário</span></div>
+    Pagamento para <span>{{paymentUser}}</span></div>
 
 <div class="content">
-    <input placeholder="R$ 0,00" id="value" required [(ngModel)]="paymentValue" />
+    <input placeholder="R$ 0,00" id="value" required [(ngModel)]="paymentValue" currencyMask [options]="{prefix: 'R$ ', thousands: '.', decimal: ','}" />
     <div class="cards">
         <select [(ngModel)]="selectedOption">
     <option type="number" *ngFor="let card of cards" value="{{card.card_number}}">Cartão com final {{card.card_number.substr(card.card_number.length-4)}}</option>

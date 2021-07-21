@@ -1,27 +1,47 @@
 /* List of Users */
-/* List of Users */
 
 .user {
-    background: linear-gradient(186.5deg, #3c3e64 0.83%, #1d1e2a 100%);
-    box-shadow: 0 1px 0 #ffffff, 0px -1px 0px #ffffff;
-    color: #fff;
+    background-color: #e0e0e0;
+    box-shadow: 0 1px 0 #fff, 0px -1px 0px #fff;
+    color: #2b2a2a;
     padding: 20px 40px;
-  
     display: flex;
     align-items: center;
-  }
-  
-  .user > img {
+    transition: 0.7s;
+}
+
+.user:hover {
+    background-color: #d6d6d6;
+}
+
+.user>img {
     border-radius: 50%;
     height: 80px;
     width: 80px;
-  }
-  
-  .user > .info-wrapper {
+}
+
+.user>.info-wrapper {
     margin-left: 16px;
-  }
-  
-  .user > .pay-button {
+}
+
+.user .user-id-username {
+    font-size: 14px;
+    color: #636366;
+}
+
+.user>.pay-button {
     margin-left: auto;
-  }
-  
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    transition: 0.3s;
+    width: 130px;
+    height: 6vh;
+    border-radius: 30px;
+}
+
+.user>.pay-button:hover {
+    background-color: #43A047;
+    cursor: pointer;
+    transition: 0.3s;
+}
