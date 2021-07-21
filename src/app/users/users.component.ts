@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
+import { ModalService } from '../modal';
 export interface User {
   id: number;
   name: string;
@@ -18,8 +19,7 @@ export class UsersComponent implements OnInit {
   paymentUser: string;
   users: User[];
 
-  constructor(
-    private httpClient: HttpClient) {  }
+  constructor(private httpClient: HttpClient, private modalService: ModalService) {  }
 
   ngOnInit() {
     this.getUsers();
@@ -32,5 +32,11 @@ export class UsersComponent implements OnInit {
         this.users = response;
       }
     );
+  }
+
+  //open the modal with the id "payment". This modal will load content from payment component
+  insertPaymentInfo($event: any, id: number) {
+    $event.preventDefault();
+    this.modalService.open("payment");
   }
 }
