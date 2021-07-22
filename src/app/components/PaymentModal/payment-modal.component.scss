@@ -1,0 +1,202 @@
+.modal-backdrop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 100vw;
+  &.hidden {
+    display: none;
+  }
+  &::after {
+    content: "";
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+  .modal {
+    background: #fff;
+    height: 100vh;
+    width: 100vw;
+    .title {
+      align-items: center;
+      background: #22c25f;
+      color: #ffffff;
+      display: flex;
+      font-weight: 500;
+      font-size: 18px;
+      height: 100px;
+      justify-content: center;
+      padding: 16px 24px;
+      position: relative;
+      .closeBtn {
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+      }
+      span {
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 5px;
+        text-transform: uppercase;
+      }
+    }
+    .content {
+      padding: 32px;
+      text-align: center;
+      .input-box {
+        text-align: left;
+        span {
+          color: #22c25f;
+          font-size: 26px;
+          font-weight: bold;
+        }
+        input {
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          color: black;
+          font-size: 32px;
+          height: 48px;
+          outline: none;
+          padding: 0 8px;
+          width: 85vw;
+        }
+      }
+      .cards {
+        margin-top: 25px;
+        text-align: left;
+        span {
+          color: #22c25f;
+          font-size: 26px;
+          font-weight: bold;
+        }
+        select {
+          background: #fff;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 32px;
+          height: 48px;
+          margin-top: 12px;
+          width: 85vw;
+        }
+      }
+
+      .keepCalm {
+        display: flex;
+        flex-direction: column;
+        padding-top: 15%;
+        img {
+          width: 100%;
+          height: auto;
+          margin-top: 10px;
+        }
+        span {
+          color: #22c25f;
+          font-size: 15px;
+          font-weight: bold;
+          line-height: 30px;
+        }
+        h2 {
+          color: #22c25f;
+          margin: 0px;
+        }
+      }
+
+      button {
+        background: #22c25f;
+        border: 0px;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        height: 50px;
+        margin-left: auto;
+        margin-top: 5%;
+        outline: none;
+        text-transform: uppercase;
+        width: 85vw;
+      }
+    }
+  }
+  @media screen and (min-width: 992px) {
+    .modal {
+      background: transparent;
+      height: 500px;
+      width: 700px;
+      .title {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        font-size: 26px;
+        .closeBtn {
+          right: 25px;
+          top: 15px;
+        }
+        span {
+          color: #fff;
+          font-size: 26px;
+          font-weight: bold;
+          margin-left: 5px;
+          text-transform: uppercase;
+        }
+      }
+      .content {
+        background: #fff;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        height: 500px;
+        padding: 32px;
+        text-align: center;
+        .input-box {
+          input {
+            width: 100%;
+          }
+        }
+        .cards {
+          select {
+            width: 100%;
+          }
+        }
+
+        .keepCalm {
+          display: flex;
+          flex-direction: column;
+          padding-top: 0px;
+          img {
+            width: 50%;
+            height: auto;
+            margin: 0 auto;
+          }
+          span {
+            color: #22c25f;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 30px;
+          }
+          h2 {
+            color: #22c25f;
+            margin: 0px;
+          }
+        }
+
+        button {
+          margin-top: 5%;
+          outline: none;
+          text-transform: uppercase;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

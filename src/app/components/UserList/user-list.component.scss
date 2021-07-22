@@ -1,0 +1,128 @@
+.container {
+  align-items: center;
+  background: #fff;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+  .user-box {
+    background: #fff;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    margin: 0 auto;
+    overflow: auto;
+
+    .user {
+      align-items: center;
+      background: #fff;
+      border-bottom: 2px solid #ddd;
+      box-shadow: 0 1px 0 #ffffff, 0px -1px 0px #ffffff;
+      color: black;
+      display: flex;
+      padding: 20px 5px;
+      width: 97vw;
+      &:last-child {
+        border-bottom: 0px;
+      }
+      .name {
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .id,
+      .username {
+        font-size: 12px;
+      }
+      img {
+        border: 3px solid #22c25f;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+      }
+      .info-wrapper {
+        margin-left: 16px;
+      }
+      .pay-button {
+        background: #22c25f;
+        border: 0px;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: bold;
+        height: 50px;
+        margin-left: auto;
+        outline: none;
+        text-transform: uppercase;
+        width: 90px;
+        &:hover {
+          background: #0f6e42;
+          transition: all 0.8s;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 992px) {
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(34, 194, 95, 1) 0%,
+      rgba(144, 221, 173, 1) 100%
+    );
+    height: 100vh;
+    width: 100vw;
+    .user-box {
+      height: 500px;
+      width: 700px;
+      .user {
+        border-bottom: 1px solid black;
+        padding: 20px 40px;
+        width: 100%;
+        &:last-child {
+          border-bottom: 0px;
+        }
+        .name {
+          font-size: 18px;
+        }
+        .id,
+        .username {
+          font-size: 14px;
+        }
+        img {
+          border: 6px solid #22c25f;
+          border-radius: 50%;
+          height: 80px;
+          width: 80px;
+        }
+        .info-wrapper {
+          margin-left: 16px;
+        }
+        .pay-button {
+          font-size: 16px;
+          height: 50px;
+          width: 200px;
+          &:hover {
+            background: #0f6e42;
+            transition: all 0.8s;
+          }
+        }
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22c25f;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0f6e42;
+}

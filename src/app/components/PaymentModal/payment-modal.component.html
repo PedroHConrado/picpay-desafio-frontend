@@ -1,0 +1,37 @@
+<div class="modal-backdrop">
+  <div class="modal">
+    <div class="title">
+      <div class="closeBtn" (click)="close()"><mat-icon>close</mat-icon></div>
+      Pagamento para <span>{{ userData.name }}</span>
+    </div>
+    <div class="content">
+      <div class="input-box">
+        <span>Valor:</span>
+        <input
+          type="text"
+          currencyMask
+          [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+          [(ngModel)]="paymentValue"
+          placeholder="R$ 0,00"
+        />
+      </div>
+      <div class="cards">
+        <span>Escolha um cartão:</span>
+        <select [(ngModel)]="selectedCard">
+          <option *ngFor="let card of cards" [ngValue]="card">
+            Cartão com final {{ card.card_number | substring: 4 }}
+          </option>
+        </select>
+      </div>
+      <div class="keepCalm">
+        <span>Fique tranquilo, sua transação é totalmente segura com </span>
+        <img src="../../../assets/logo-pic-pay.png" />
+        <h2>;)</h2>
+      </div>
+      <button type="button" class="pay-button" (click)="doPayment()">
+        <span *ngIf="!loader">Pagar</span>
+        <app-loader *ngIf="loader"></app-loader>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="user-box" *ngIf="!loader">
+    <div class="user" *ngFor="let user of users">
+      <img :src="{{ user.img }}" />
+      <div class="info-wrapper">
+        <div class="name">
+          {{ user.name }}
+        </div>
+        <div class="id"><strong>ID:</strong> {{ user.id }}</div>
+        <div class="username">
+          <strong>Username:</strong>{{ user.username }}
+        </div>
+      </div>
+      <button type="button" class="pay-button" (click)="openModal(user)">
+        Pagar
+      </button>
+    </div>
+    <app-payment-modal
+      *ngIf="showModal"
+      [userData]="selectedUser"
+      (closeModal)="closeModal()"
+      (openStatusModal)="openStatusModal($event)"
+    ></app-payment-modal>
+    <app-status-modal
+      [status]="status"
+      *ngIf="showStatusModal"
+    ></app-status-modal>
+  </div>
+  <app-loader *ngIf="loader"></app-loader>
+</div>
