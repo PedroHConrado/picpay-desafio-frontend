@@ -1,0 +1,73 @@
+.container {
+    background: rgb(17, 199, 111);
+    width: 18rem;
+    height: 100vh;
+    position: fixed;
+
+    .logo {
+        width: 10rem;
+        margin: 0 auto;
+    }
+
+    .info-user {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        margin-top: 5rem;
+
+        img {
+            width: 100px;
+            height: 100px;
+            border: 2px dashed white;
+            border-radius: 50%;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            color: rgba(239,240,232);
+
+        }
+    }
+
+    .current {
+        margin: 5rem auto; 
+        color: rgba(239,240,232);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        p {
+            padding: 0;
+            margin: 0;
+        }
+
+        h1 {
+            margin: 0.5rem;
+        }
+
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        
+        margin-top: 10rem;
+
+        button {
+            font-size: 1.5rem;
+            font-weight: 700;
+
+            background: transparent;
+            border: none;
+            color: rgb(239, 240, 232);
+
+            cursor: pointer;
+        }
+    }
+
+}
