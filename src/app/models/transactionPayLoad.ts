@@ -1,6 +1,7 @@
 // Payload:
 
-interface TransactionPayload {
+export interface TransactionPayload {
+
     // Card Info
     card_number: string;
     cvv: number;
@@ -10,5 +11,5 @@ interface TransactionPayload {
     destination_user_id: number;
 
     // Value of the Transaction
-    value: number;
+    value_payment: number;
 }

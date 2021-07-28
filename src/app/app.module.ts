@@ -1,14 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatDialogModule } from '@angular/material/dialog';
+
 import { ModalPaymentComponent } from './components/modal-payment/modal-payment.component';
+import { ModalResultSuccessComponent } from './components/modal-result-success/modal-result-success.component';
+import { ModalResultFailedComponent } from './components/modal-result-failed/modal-result-failed.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -16,17 +22,31 @@ import { ModalPaymentComponent } from './components/modal-payment/modal-payment.
     AppComponent,
     SidebarComponent,
     ContactsComponent,
-    ModalPaymentComponent
+    ModalPaymentComponent,
+    ModalResultSuccessComponent,
+    ModalResultFailedComponent,
+    ModalResultSuccessComponent,
+    ModalResultFailedComponent,
+    HeaderComponent
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatProgressSpinnerModule,
+
+
 
   ],
   entryComponents: [
-    ModalPaymentComponent
+    ModalPaymentComponent,
+    ModalResultSuccessComponent,
+    ModalResultFailedComponent
+
   ],
   providers: [],
   bootstrap: [AppComponent]

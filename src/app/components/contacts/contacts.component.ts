@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
+import { Observable } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 
 import { User } from '../../models/user'
@@ -12,32 +13,30 @@ import { ModalPaymentComponent } from '../modal-payment/modal-payment.component'
 })
 export class ContactsComponent implements OnInit {
 
-  users!: User[];
+  user!: User;
+  users$: Observable<User[]>
 
   constructor(
     private userService: UserService,
-    public dialog: MatDialog
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() {
-    this.userService.read().subscribe(users => {
-      this.users = users
-      console.log(users)
-    })
+    this.users$ = this.userService.readUsers()
   }
 
   openModalPayment(id: number): void {
+
     const dialogRef = this.dialog.open(ModalPaymentComponent, {
-      width: '250px',
-      data: { id }
+      width: '700px',
+      height: '500px',
+      data: { id: id },
+      panelClass: 'custom-dialog-container'
 
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('A caixa de diálogo foi fechada');
-    });
+    dialogRef.afterClosed().subscribe()
 
-    console.log(id)
   }
 
 

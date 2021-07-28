@@ -1,6 +1,6 @@
 .container {
-    width: 1080px;
-    height: 70vh;
+    width: calc(100% - 26rem);
+    height: 80vh;
 
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
 
     position: absolute;
     bottom: 0;
-    transform: translateX(50%);
+    background: rgba(239,240,232);
     
 
     .user {
@@ -19,8 +19,8 @@
         position: relative;
         width: 90%;
         margin: 1rem auto 0;
+        background: #fcfcfd;
         
-        background: rgba(239,240,232);
 
         border-radius: 1rem;
 
@@ -65,3 +65,5 @@
         }
     }
 }
+
+

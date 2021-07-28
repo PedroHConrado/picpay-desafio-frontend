@@ -1,0 +1,15 @@
+.container {
+    width: calc(100% - 26rem);
+    height: 20vh;
+    position: absolute;
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: center;
+    background: rgba(239,240,232);
+
+    .logo {
+        width: 30rem;
+        margin-top: 1rem;
+        
+    }
+}

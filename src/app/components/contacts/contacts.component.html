@@ -1,5 +1,5 @@
-<main class="container">
-    <article class="user" *ngFor="let user of users;">
+<div class="container">
+    <article class="user" *ngFor="let user of users$ | async">
         <img src="{{ user.img }}" alt="Foto do usuário">
         <div class="info-user">
             <h3>{{ user.name }}</h3>
@@ -7,7 +7,5 @@
             <p>{{ user.username }}</p>
         </div>
         <button (click)="openModalPayment(user.id)">Pagar</button>
-
     </article>
-
-</main>
+</div>

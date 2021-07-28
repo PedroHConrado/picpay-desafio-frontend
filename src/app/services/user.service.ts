@@ -2,19 +2,33 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
+import { Card } from '../models/card';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  url = 'https://www.mocky.io/v2/5d531c4f2e0000620081ddce'
+  usersUrl = 'http://localhost:3333/users'
+  cardsUrl = 'http://localhost:3333/cards'
+
 
   constructor(
     private http: HttpClient
   ) { }
 
-  read(): Observable<User[]> {
-    return this.http.get<User[]>(this.url)
+  readUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.usersUrl)
   }
+
+  readCards(): Observable<Card[]> {
+    return this.http.get<Card[]>(this.cardsUrl)
+  }
+
+  readById(id: number): Observable<User> {
+    const url = `${this.usersUrl}/${id}`;
+    return this.http.get<User>(url)
+  }
+
 }
+

@@ -1,7 +1,28 @@
 <div class="container">
-    <h1 mat-dialog-title>Hi {{data.name}}, {{ data.id }}</h1>
-    <h2></h2>
-    <div mat-dialog-actions>
-        <button mat-button (click)="cancel()">No Thanks</button>
-    </div>
+    <header class="header">
+        <h1>Novo Pagamento</h1>
+    </header>
+
+    <article class="user">
+        <div class="content-user">
+            <img src="{{ user?.img }}" alt="Foto do usuário">
+            <div class="info-user">
+                <p>{{ user?.name }}</p>
+                <strong>{{ user?.username }}</strong>
+            </div>
+        </div>
+        <form [formGroup]="form">
+            <input type="number" id="value" placeholder="R$ 0,00" formControlName="value_payment"
+                [value]="value_payment">
+
+            <select name="card" class="card" id="card" formControlName="card">
+                <option [ngValue]="card" *ngFor="let card of cards;" selected>Cartão com final {{
+                    card?.card_number |
+                    slice:-4}}
+                </option>
+            </select>
+            <button class=" close" (click)="cancel()">Cancelar</button>
+            <button type="submit" (click)="onSubmit()">Pagar</button>
+        </form>
+    </article>
 </div>
