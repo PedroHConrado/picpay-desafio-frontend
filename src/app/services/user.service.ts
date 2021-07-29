@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { EMPTY, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+
 import { User } from '../models/user';
-import { Card } from '../models/card';
+
 import { environment } from 'src/environments/environment';
-import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Injectable({
   providedIn: 'root'
@@ -36,13 +39,6 @@ export class UserService {
       );
   }
 
-  readCards(): Observable<Card[]> {
-    return this.http.get<Card[]>(this.cardsUrl)
-      .pipe(
-        catchError((e) => this.errorHandler(e))
-      );
-  }
-
   readById(id: number): Observable<User> {
     const url = `${this.usersUrl}/${id}`;
     return this.http.get<User>(url)
@@ -52,7 +48,7 @@ export class UserService {
   }
 
   errorHandler(e: any): Observable<any> {
-    this.showMessage('Ocorreu um erro!', true);
+    this.showMessage(`Erro: ${e.message}!`, true);
     return EMPTY;
 
   }

@@ -35,8 +35,6 @@ export class ModalPaymentComponent implements OnInit {
     },
   ];
 
-
-
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
@@ -92,7 +90,6 @@ export class ModalPaymentComponent implements OnInit {
   }
 
   openModalSuccess(): void {
-
     const dialogRef = this.dialog.open(ModalResultSuccessComponent, {
       width: '900px',
       height: '200px',
@@ -105,7 +102,6 @@ export class ModalPaymentComponent implements OnInit {
   }
 
   openModalFailed(): void {
-
     const dialogRef = this.dialog.open(ModalResultFailedComponent, {
       width: '900px',
       height: '200px',

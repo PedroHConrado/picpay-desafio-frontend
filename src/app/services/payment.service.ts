@@ -6,7 +6,6 @@ import { environment } from 'src/environments/environment';
 import { TransactionPayload } from '../models/transactionPayLoad';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +13,6 @@ export class PaymentService {
 
   transactionsUrl = environment.TRANSACTIONS_URL;
   TRANSACTION = environment.TRANSACTION;
-
 
   constructor(
     private snackBar: MatSnackBar,
@@ -47,7 +45,7 @@ export class PaymentService {
   }
 
   errorHandler(e: any): Observable<any> {
-    this.showMessage('Ocorreu um erro!', true);
+    this.showMessage(`Erro: ${e.message}!`, true);
     return EMPTY;
 
   }

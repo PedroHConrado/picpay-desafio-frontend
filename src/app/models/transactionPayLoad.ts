@@ -1,5 +1,3 @@
-// Payload:
-
 export interface TransactionPayload {
 
     card: {
