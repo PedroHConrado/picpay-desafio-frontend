@@ -16,4 +16,8 @@ export class ModalResultFailedComponent implements OnInit {
   ngOnInit() {
   }
 
+  cancel(): void {
+    this.dialogRef.close();
+  }
+
 }

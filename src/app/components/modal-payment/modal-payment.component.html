@@ -12,17 +12,34 @@
             </div>
         </div>
         <form [formGroup]="form">
-            <input type="number" id="value" placeholder="R$ 0,00" formControlName="value_payment"
-                [value]="value_payment">
+            <div class="input-value">
+                <label for="value">R$ </label>
+                <input type="number" id="value" placeholder="0,00" formControlName="value_payment"
+                    [value]="value_payment">
+            </div>
+
+            <div class="input-valid" *ngIf="!form.get('value_payment').valid && form.get('value_payment').touched">
+                <small *ngIf="form.get('value_payment').hasError('required')">Esse campo é obrigatório</small>
+
+                <small class="input-valid-min" *ngIf="form.get('value_payment').hasError('minlength')">Valor minimo de
+                    transação: 0.1</small>
+            </div>
 
             <select name="card" class="card" id="card" formControlName="card">
-                <option [ngValue]="card" *ngFor="let card of cards;" selected>Cartão com final {{
-                    card?.card_number |
+                <option class="test" [ngValue]="card" *ngFor="let card of cards;">Cartão com final {{
+                    card.card_number |
                     slice:-4}}
                 </option>
             </select>
+
+            <div class="select-valid"
+                *ngIf="!form.get('value_payment').valid && form.get('card').errors && form.get('value_payment').touched">
+                <small>Selecione um cartão</small>
+            </div>
+
             <button class=" close" (click)="cancel()">Cancelar</button>
             <button type="submit" (click)="onSubmit()">Pagar</button>
         </form>
     </article>
+    <mat-icon class="close-modal" (click)="cancel()">close</mat-icon>
 </div>

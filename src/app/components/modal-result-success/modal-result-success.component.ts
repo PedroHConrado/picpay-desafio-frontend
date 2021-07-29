@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
+
 @Component({
   selector: 'app-modal-result-success',
   templateUrl: './modal-result-success.component.html',
@@ -15,7 +16,7 @@ export class ModalResultSuccessComponent implements OnInit {
   ngOnInit() {
   }
 
-  cancel2(): void {
+  cancel(): void {
     this.dialogRef.close();
   }
 

@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material';
 import { Observable } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 
-import { User } from '../../models/user'
+import { User } from '../../models/user';
 import { ModalPaymentComponent } from '../modal-payment/modal-payment.component';
 
 @Component({
@@ -14,7 +14,7 @@ import { ModalPaymentComponent } from '../modal-payment/modal-payment.component'
 export class ContactsComponent implements OnInit {
 
   user!: User;
-  users$: Observable<User[]>
+  users$: Observable<User[]>;
 
   constructor(
     private userService: UserService,
@@ -22,7 +22,7 @@ export class ContactsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.users$ = this.userService.readUsers()
+    this.users$ = this.userService.readUsers();
   }
 
   openModalPayment(id: number): void {
@@ -30,14 +30,12 @@ export class ContactsComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalPaymentComponent, {
       width: '700px',
       height: '500px',
-      data: { id: id },
+      data: { id },
       panelClass: 'custom-dialog-container'
 
     });
 
-    dialogRef.afterClosed().subscribe()
+    dialogRef.afterClosed().subscribe();
 
   }
-
-
 }
